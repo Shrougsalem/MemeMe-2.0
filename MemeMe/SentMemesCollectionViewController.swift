@@ -17,22 +17,25 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
     }
+    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let space:CGFloat = 3.0
         let widthDimension = (view.frame.size.width - (2 * space)) / 3.0
         let heightDimension = (view.frame.size.height - (2 * space)) / 3.0
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: widthDimension, height: heightDimension)
-
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView!.reloadData()
     }
+    
     //MARK: Actions
     @IBAction func addNewMeme(_ sender: Any) {
         let memeVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeViewController")
@@ -44,15 +47,15 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionCell", for: indexPath) as! SentMemesCollectionViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
-        cell.cellImage!.image = meme.memedImage
+        cell.collectionViewCellImage!.image = meme.memedImage
         return cell
     }
     
@@ -63,6 +66,5 @@ class SentMemesCollectionViewController: UICollectionViewController {
         detailController.meme = meme
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-   
 
 }

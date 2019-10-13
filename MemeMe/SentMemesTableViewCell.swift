@@ -10,24 +10,17 @@ import UIKit
 
 class SentMemesTableViewCell: UITableViewCell {
 
+    //MARK: Outlets
     @IBOutlet weak var tableViewCellImage: UIImageView!
     @IBOutlet weak var tableViewCellText: UITextField!
     
+    //MARK: Cell Configuration
     func cellConfig(_ meme: Meme) {
         tableViewCellImage.image = meme.memedImage
         tableViewCellText.text = meme.topText + "..." + meme.bottomText
         tableViewCellText.isEnabled = false
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 
 }

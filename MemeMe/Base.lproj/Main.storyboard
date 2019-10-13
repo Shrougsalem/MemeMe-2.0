@@ -109,7 +109,7 @@
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="tM2-41-JK8"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="add" id="qE0-Y6-Bct">
+                                    <barButtonItem title="Album" id="qE0-Y6-Bct">
                                         <connections>
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="SIt-0f-ofO"/>
                                         </connections>
@@ -229,7 +229,7 @@
                                     <constraint firstItem="17I-yQ-sxL" firstAttribute="width" secondItem="0l4-Gq-AZD" secondAttribute="width" constant="-10" id="qD0-7r-Ye5"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="cellImage" destination="17I-yQ-sxL" id="S7w-1z-Ddy"/>
+                                    <outlet property="collectionViewCellImage" destination="17I-yQ-sxL" id="S7w-1z-Ddy"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
